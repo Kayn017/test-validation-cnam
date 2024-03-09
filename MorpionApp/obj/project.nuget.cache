@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ws7kzT3m6MGlhGQheU6MxQfq/2IkLAYsrWoW70uHbfHsKmAHKBWTd1ju29ICSkVYyQtN1iTkjzlZYFcIuNkbwQ==",
+  "success": true,
+  "projectFilePath": "/home/tgimenez/Seafile/Cours/CNAM/A2/Test et validations/Projet/TP1/MorpionApp/MorpionApp.csproj",
+  "expectedPackageFiles": [
+    "/home/tgimenez/.nuget/packages/microsoft.netcore.app.ref/6.0.27/microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
+    "/home/tgimenez/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.27/microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512",
+    "/home/tgimenez/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.27/microsoft.netcore.app.host.linux-x64.6.0.27.nupkg.sha512"
+  ],
+  "logs": []
+}
