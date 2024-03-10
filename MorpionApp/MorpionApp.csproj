@@ -7,4 +7,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="src\Views\cli\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="src\Views\cli\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="src\Views\cli\**" />
+  </ItemGroup>
+
 </Project>
