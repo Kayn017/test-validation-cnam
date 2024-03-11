@@ -1,3 +1,5 @@
+using MorpionApp.Controllers;
+
 namespace MorpionApp.Models;
 
 public abstract class Player
@@ -10,4 +12,6 @@ public abstract class Player
         this.Id = id;
         this.Name = name;
     }
+
+    public abstract void Play(GameController gameController);
 }

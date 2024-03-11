@@ -15,9 +15,9 @@ public class HorizontalLineEvaluator : AbstractLineAlignementEvaluator
     {
         bool res = false;
         
-        for (int i = 0; i < board.rowCount; i++)
+        for (int i = 0; i < board.NbRow; i++)
         {
-            res = res || (this.checkMaxConsecutive(board, player, i, 0, 0, 1) >= this.NbTokensToAlign);
+            res = res || (this.CheckMaxConsecutive(board, player, i, 0, 0, 1) >= this.NbTokensToAlign);
         }
         
         return res;

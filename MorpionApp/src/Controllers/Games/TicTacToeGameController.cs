@@ -9,10 +9,8 @@ namespace MorpionApp.Controllers.Games;
 
 public class TicTacToeGameController : GameController
 {
-    public TicTacToeGameController(TicTacToeBoard board, Player[] players): base(players)
+    public TicTacToeGameController(TicTacToeBoard board, Player[] players) : base(board, players)
     {
-        this.Board = board;
-
         this.WinConditions = new IEvaluator[]
         {
             new HorizontalLineEvaluator(3),
@@ -21,11 +19,14 @@ public class TicTacToeGameController : GameController
         };
     }
 
+    public override int MinNbPlayers => 2;
+    public override int MaxNbPlayers => 2;
+
     public override bool CheckWin()
     {
         if (this.WinConditions.Any(evaluator => evaluator.Evaluate(this.Board, this.CurrentPlayer)))
         {
-            this.EventManager.notify(EventTypes.Win);
+            this.EventManager.notify(EventTypes.Win, "Victoire de " + this.CurrentPlayer.Name);
             return true;
         }
 
@@ -36,13 +37,21 @@ public class TicTacToeGameController : GameController
     {
         TicTacToeToken token = new(this.CurrentPlayer);
 
-        if (!this.Board.playable(position))
-        {
+        if(!this.Board.putTokenInCase(position, token))
             throw new InvalidMoveException();
-        }
-
-        this.Board.Grid[position.X, position.Y].Token = token;
         
         this.EventManager.notify(EventTypes.Play);
+
+        if(!this.CheckWin())
+            this.NextPlayer();
+    }
+    
+    public override void GameLoop()
+    {
+        while (!this.isEnded)
+        {
+            this.EventManager.notify(EventTypes.Play);
+            this.EventManager.notify(EventTypes.UserInput);
+        }
     }
 }

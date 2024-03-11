@@ -7,12 +7,12 @@ public abstract class AbstractLineAlignementEvaluator : IEvaluator
 {
     public abstract bool Evaluate(Board board, Player player);
 
-    protected int checkMaxConsecutive(Board board, Player player, int startRow, int startCol, int rowStep, int colStep)
+    protected int CheckMaxConsecutive(Board board, Player player, int startRow, int startCol, int rowStep, int colStep)
     {
         int nbTokensAligned = 0;
         int maxNbTokensAligned = 0;
         
-        for(int row = 0, col = 0; row < board.rowCount && col < board.columnCount && row >= 0 && col >= 0; row += rowStep, col += colStep)
+        for(int row = 0, col = 0; row < board.NbRow && col < board.NbColumn && row >= 0 && col >= 0; row += rowStep, col += colStep)
         {
             if (player.Equals(board.Grid[startRow + row, startCol + col].Token?.Player))
             {

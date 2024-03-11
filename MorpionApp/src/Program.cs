@@ -1,7 +1,8 @@
-﻿using MorpionApp.Controllers.Games;
+﻿using System.Runtime.CompilerServices;
+using MorpionApp.Controllers.Games;
 using MorpionApp.Models;
 using MorpionApp.Models.Games.TicTacToe;
-using MorpionApp.Views;
+using MorpionApp.Views.Console;
 
 namespace MorpionApp
 {
@@ -9,10 +10,6 @@ namespace MorpionApp
     {
         static void Main(string[] args)
         {
-            System.Console.WriteLine("Coucou");
-            
-            // TODO : plus qu'a implémenter le déroulement d'une partie et le TicTacToe est fini (en principe)
-            
             HumanPlayer[] players = new HumanPlayer[2];
             
             players[0] = new HumanPlayer(1, "Player 1");
@@ -24,7 +21,7 @@ namespace MorpionApp
             
             ConsoleGridGameView consoleGridGameView = new ConsoleGridGameView(ticTacToeGameController);
             
-            consoleGridGameView.DrawGrid();
+            consoleGridGameView.Controller.GameLoop();    
         }
     }
 }

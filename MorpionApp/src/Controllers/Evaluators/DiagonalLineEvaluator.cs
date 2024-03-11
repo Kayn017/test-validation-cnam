@@ -16,14 +16,14 @@ public class DiagonalLineEvaluator : AbstractLineAlignementEvaluator
     public override bool Evaluate(Board board, Player player)
     {
         bool res = false;
-        int maxCol = board.rowCount - board.columnCount;
+        int maxCol = board.NbRow - board.NbColumn;
         
-        for (int i = 0; i < maxCol; i++)
+        for (int i = 0; i <= maxCol; i++)
         {
-            res = res || (this.checkMaxConsecutive(board, player, 0, i, 1, 1) >= this.NbTokensToAlign);
-            res = res || (this.checkMaxConsecutive(board, player, 0, i, -1, 1) >= this.NbTokensToAlign);
-            res = res || (this.checkMaxConsecutive(board, player, board.rowCount - 1, i, -1, 1) >= this.NbTokensToAlign);
-            res = res || (this.checkMaxConsecutive(board, player, board.rowCount - 1, i, -1, -1) >= this.NbTokensToAlign);
+            res = res || (this.CheckMaxConsecutive(board, player, 0, i, 1, 1) >= this.NbTokensToAlign);
+            res = res || (this.CheckMaxConsecutive(board, player, 0, i, -1, 1) >= this.NbTokensToAlign);
+            res = res || (this.CheckMaxConsecutive(board, player, board.NbRow - 1, i, -1, 1) >= this.NbTokensToAlign);
+            res = res || (this.CheckMaxConsecutive(board, player, board.NbRow - 1, i, -1, -1) >= this.NbTokensToAlign);
         }
         
         return res;

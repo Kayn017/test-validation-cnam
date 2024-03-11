@@ -1,3 +1,6 @@
+using MorpionApp.Controllers;
+using MorpionApp.Controllers.Enums;
+
 namespace MorpionApp.Models;
 
 public class HumanPlayer : Player
@@ -20,5 +23,10 @@ public class HumanPlayer : Player
         HumanPlayer other = (HumanPlayer) obj;
         
         return this.Id == other.Id && this.Name == other.Name;
+    }
+
+    public override void Play(GameController gameController)
+    {
+        gameController.EventManager.notify(EventTypes.UserInput);
     }
 }

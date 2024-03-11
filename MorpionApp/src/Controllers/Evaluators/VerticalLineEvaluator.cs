@@ -15,9 +15,9 @@ public class VerticalLineEvaluator : AbstractLineAlignementEvaluator
     {     
         bool res = false;
         
-        for (int i = 0; i < board.columnCount; i++)
+        for (int i = 0; i < board.NbColumn; i++)
         {
-            res = res || (this.checkMaxConsecutive(board, player, 0, i, 1, 0) >= this.NbTokensToAlign);
+            res = res || (this.CheckMaxConsecutive(board, player, 0, i, 1, 0) >= this.NbTokensToAlign);
         }
         
         return res;
