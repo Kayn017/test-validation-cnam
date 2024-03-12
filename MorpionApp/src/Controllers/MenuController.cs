@@ -27,6 +27,12 @@ public class MenuController
         
         this.Controller = GameControllerFactory.CreateGameController(this.SelectedGame, this.Players.ToArray());
         
+        // Ne fonctionne pas, mais en principe c'est comme ca qu'on est sensé faire
+        // GameSaver gameSaver = new GameSaver(new JSONGameSaveManager("./save.json"), this.Controller);
+        
+        // this.Controller.EventManager.addListener(EventTypes.Win, gameSaver);
+        // this.Controller.EventManager.addListener(EventTypes.Play, gameSaver);
+        
         // TODO : Prendre en compte dans le futur les différents types de vues
         IGameView gameView = new ConsoleGridGameView(this.Controller);
         
