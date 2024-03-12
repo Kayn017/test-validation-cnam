@@ -78,8 +78,13 @@ public class ConsoleMenuView : IMenuView
             type = PlayerTypes.Computer;
         }
 
-        System.Console.WriteLine("Enter player name : ");
-        string name = System.Console.ReadLine();
+        string name = "Gros joueur";
+
+        if (type == PlayerTypes.Human)
+        {
+            System.Console.WriteLine("Enter player name : ");
+            name = System.Console.ReadLine();
+        }
 
         try
         {

@@ -37,9 +37,9 @@ public class MenuController
     {
         if (name == String.Empty)
         {
-            throw new ArgumentException("Name cannot be empty");    
+            throw new ArgumentException("Name cannot be empty");
         }
         
-        this.Players.Add(PlayerFactory.CreatePlayer(PlayerTypes.Human, name));
+        this.Players.Add(PlayerFactory.CreatePlayer(type, name));
     }
 }

@@ -14,9 +14,9 @@ public class PlayerFactory
             case PlayerTypes.Human:
                 player = new HumanPlayer(name);
                 break;
-            //case PlayerTypes.Computer:
-            //    player = new ComputerPlayer(name);
-            //    break;
+            case PlayerTypes.Computer:
+                player = new ComputerPlayer(name);
+                break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
