@@ -16,9 +16,8 @@ public class DiagonalLineEvaluator : AbstractLineAlignementEvaluator
     public override bool Evaluate(Board board, Player player)
     {
         bool res = false;
-        int maxCol = board.NbRow - board.NbColumn;
         
-        for (int i = 0; i <= maxCol; i++)
+        for (int i = 0; i <= board.NbColumn; i++)
         {
             res = res || (this.CheckMaxConsecutive(board, player, 0, i, 1, 1) >= this.NbTokensToAlign);
             res = res || (this.CheckMaxConsecutive(board, player, 0, i, -1, 1) >= this.NbTokensToAlign);

@@ -42,9 +42,13 @@ public class ConsoleMenuView : IMenuView
     {
         System.Console.WriteLine("Choose a game : ");
         string choice = System.Console.ReadLine();
-        if (choice == "1")
+        if (choice.Contains("1"))
         {
             MenuController.SelectedGame = Game.TicTacToe;
+        }
+        else if (choice.Contains("2"))
+        {
+            MenuController.SelectedGame = Game.ConnectFour;
         }
         else
         {
@@ -64,21 +68,26 @@ public class ConsoleMenuView : IMenuView
     {
         System.Console.WriteLine("Choose a player type :");
         string choice = System.Console.ReadLine();
-        switch (choice)
+        PlayerTypes type;
+        if (choice.Contains("1"))
         {
-            case "1":
-                System.Console.WriteLine("Enter player name : ");
-                string name = System.Console.ReadLine();
+            type = PlayerTypes.Human;
+        }
+        else 
+        {
+            type = PlayerTypes.Computer;
+        }
 
-                try
-                {
-                    this.MenuController.AddPlayer(PlayerTypes.Human, name);
-                }
-                catch (ArgumentException exception)
-                {
-                    System.Console.WriteLine("Veuillez entrer un nom valide");
-                }
-                break;
+        System.Console.WriteLine("Enter player name : ");
+        string name = System.Console.ReadLine();
+
+        try
+        {
+            this.MenuController.AddPlayer(type, name);
+        }
+        catch (ArgumentException exception)
+        {
+            System.Console.WriteLine("Veuillez entrer un nom valide");
         }
     }
 }

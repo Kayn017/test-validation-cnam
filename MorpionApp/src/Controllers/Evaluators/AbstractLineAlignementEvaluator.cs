@@ -12,7 +12,7 @@ public abstract class AbstractLineAlignementEvaluator : IEvaluator
         int nbTokensAligned = 0;
         int maxNbTokensAligned = 0;
         
-        for(int row = 0, col = 0; row < board.NbRow && col < board.NbColumn && row >= 0 && col >= 0; row += rowStep, col += colStep)
+        for(int row = 0, col = 0; startRow + row < board.NbRow && startCol + col < board.NbColumn && row >= 0 && col >= 0; row += rowStep, col += colStep)
         {
             if (player.Equals(board.Grid[startRow + row, startCol + col].Token?.Player))
             {

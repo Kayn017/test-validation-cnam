@@ -90,43 +90,7 @@ public class ConsoleGridGameView : IGridGameView, IEventListener
     {
         ConsoleKeyInfo input = System.Console.ReadKey(true);
 
-        switch (input.Key)
-        {   
-            case ConsoleKey.UpArrow:
-                if (this.Cursor.Y > 0)
-                {
-                    this.Cursor.Y--;
-                }
-                break;
-            case ConsoleKey.DownArrow:
-                if (this.Cursor.Y < Controller.Board.NbRow - 1)
-                {
-                    this.Cursor.Y++;
-                }
-                break;
-            case ConsoleKey.LeftArrow:
-                if (this.Cursor.X > 0)
-                {
-                    this.Cursor.X--;
-                }
-                break;
-            case ConsoleKey.RightArrow:
-                if (this.Cursor.X < Controller.Board.NbColumn - 1)
-                {
-                    this.Cursor.X++;
-                }
-                break;
-            case ConsoleKey.Enter:
-                try
-                {
-                    Controller.Play(this.Cursor);
-                }
-                catch (InvalidMoveException exception)
-                {
-                    System.Console.WriteLine("Invalid move");
-                } 
-                break;
-        }
+        this.Controller.moveCursor(this.Cursor, input.Key);
     }
 
     public void OnUpdate(EventTypes eventType, string message)
@@ -140,6 +104,7 @@ public class ConsoleGridGameView : IGridGameView, IEventListener
                 this.ReadUserInput();
                 break;
             case EventTypes.Win:
+                System.Console.Clear();
                 System.Console.WriteLine(message);
                 this.Controller.isEnded = true;
                 break;

@@ -40,6 +40,8 @@ public abstract class GameController
     public abstract bool CheckWin();
     public abstract void Play(Position position);
     public abstract void GameLoop();
+
+    public abstract Position moveCursor(Position cursor, ConsoleKey key);
     
     public void NextPlayer()
     {

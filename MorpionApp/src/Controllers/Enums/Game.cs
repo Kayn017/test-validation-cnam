@@ -4,4 +4,5 @@ public enum Game
 {
     None,
     TicTacToe,
+    ConnectFour
 }
