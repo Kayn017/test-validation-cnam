@@ -10,5 +10,14 @@ public class Position
         X = x;
         Y = y;
     }
+
+    public override bool Equals(object? obj)
+    {
+        if (obj is Position position)
+        {
+            return position.X == this.X && position.Y == this.Y;
+        }
         
+        return false;
+    }
 }
