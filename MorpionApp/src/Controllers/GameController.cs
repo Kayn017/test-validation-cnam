@@ -26,8 +26,15 @@ public abstract class GameController
         
         this.Board = board;
         this.Players = players;
+        this.UpdatePlayerIds();
         this.currentPlayerIdx = 0;
         this.EventManager = new EventManager();
+    }
+    
+    private void UpdatePlayerIds()
+    {
+        for(int i = 0; i < this.Players.Length; i++)
+            this.Players[i].Id = i;
     }
 
     public abstract bool CheckWin();

@@ -5,6 +5,8 @@ namespace MorpionApp.Models;
 
 public class HumanPlayer : Player
 {
+    public HumanPlayer(string name) : base(0, name)
+    {}
     public HumanPlayer(int id, string name) : base(id, name)
     {}
     

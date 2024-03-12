@@ -4,8 +4,8 @@ namespace MorpionApp.Models;
 
 public abstract class Player
 {
-    public int Id { get; }
-    public string Name { get; }
+    public int Id { get; set; }
+    public string Name { get; set;  }
     
     public Player(int id, string name)
     {

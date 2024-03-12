@@ -15,16 +15,30 @@ public class ConsoleMenuView : IMenuView
 
     public void Show()
     {
-        DisplayGameList();
-        ChooseGame();
+        this.DisplayGameList();
+        
+        while (this.MenuController.SelectedGame == Game.None)
+        {
+            this.ChooseGame();
+        }
+        
+        // TODO : s'occuper de jeux aux nombres de joueurs supérieur à 2
+        while (this.MenuController.Players.Count < 2)
+        {
+            this.DisplayPlayerTypeList();
+            this.CreatePlayer();
+        }
+        
+        this.MenuController.StartGame();
     }
-    private void DisplayGameList()
+    public void DisplayGameList()
     {
         System.Console.WriteLine("Available games : ");
-        System.Console.WriteLine("1. Morpion");
+        System.Console.WriteLine("1. Tic Tac Toe");
+        System.Console.WriteLine("2. Connect Four");
     }
     
-    private void ChooseGame()
+    public void ChooseGame()
     {
         System.Console.WriteLine("Choose a game : ");
         string choice = System.Console.ReadLine();
@@ -35,6 +49,36 @@ public class ConsoleMenuView : IMenuView
         else
         {
             System.Console.WriteLine("Invalid choice");
+        }
+    }
+    
+    public void DisplayPlayerTypeList()
+    {
+        System.Console.WriteLine("Available player type : ");
+        System.Console.WriteLine("1. Human");
+        System.Console.WriteLine("2. AI");
+    }
+
+    
+    public void CreatePlayer()
+    {
+        System.Console.WriteLine("Choose a player type :");
+        string choice = System.Console.ReadLine();
+        switch (choice)
+        {
+            case "1":
+                System.Console.WriteLine("Enter player name : ");
+                string name = System.Console.ReadLine();
+
+                try
+                {
+                    this.MenuController.AddPlayer(PlayerTypes.Human, name);
+                }
+                catch (ArgumentException exception)
+                {
+                    System.Console.WriteLine("Veuillez entrer un nom valide");
+                }
+                break;
         }
     }
 }
