@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditImmoTest", "CreditImmoTest\CreditImmoTest.csproj", "{6C4E8489-6F0C-49B3-9D72-85D0A4413A82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditImmo", "CreditImmo\CreditImmo.csproj", "{D7E5D576-8F0B-4A5B-9656-90260F5E2B57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C4E8489-6F0C-49B3-9D72-85D0A4413A82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C4E8489-6F0C-49B3-9D72-85D0A4413A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C4E8489-6F0C-49B3-9D72-85D0A4413A82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C4E8489-6F0C-49B3-9D72-85D0A4413A82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7E5D576-8F0B-4A5B-9656-90260F5E2B57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7E5D576-8F0B-4A5B-9656-90260F5E2B57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7E5D576-8F0B-4A5B-9656-90260F5E2B57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7E5D576-8F0B-4A5B-9656-90260F5E2B57}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
